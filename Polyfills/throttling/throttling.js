@@ -3,14 +3,21 @@ const func = (text) => console.log(text);
 const throtFunc = createThrotFunc(func, 300);
 
 const createThrotFunc = (fn, delay) => {
-    let flag = true;
+    let timer = null;
+    let lastArgs = null;
     return function (...args) {
-        if(flag) {
+        const context = this;
+        if(!timer) {
             fn(args);
-            flag = false;
-            setTimeout(() => {
-                flag = true;
+            timer = setTimeout(() => {
+                if(lastArgs) {
+                    fn.apply(context, args);
+                }
+                timer = null;
             }, delay)
+        }
+        else {
+            lastArgs = args;
         }
     }
 }
