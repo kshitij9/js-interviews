@@ -1,0 +1,65 @@
+.carousel {
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel .carousel-item {
+    height: 100%;
+    width: 100%;
+    display: none;
+    position: absolute;
+    transition: transform 400ms;
+}
+
+.carousel .carousel-item.active,
+.carousel .carousel-item.prev-item,
+.carousel .carousel-item.next-item {
+    display: block;
+}
+
+.carousel-item.next-item {
+    transform: translateX(100%);
+}
+
+.carousel-item.prev-item {
+    transform: translateX(-100%);
+}
+
+.carousel-item.prev-item,
+.carousel-item.active.slide-next {
+    transform: translateX(-100%);
+}
+
+.carousel-item.next-item,
+.carousel-item.active.slide-prev {
+    transform: translateX(100%);
+}
+
+.carousel-item.prev-item.slide-end,
+.carousel-item.next-item.slide-end {
+    transform: translateX(0%);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    z-index: 20;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.3;
+    transition: opacity 300ms;
+}
+
+.carousel-control-prev {
+    left: 20px;
+}
+
+.carousel-control-prev:hover {
+    opacity: 1;
+}
+
+.carousel-control-next {
+    right: 20px;
+}

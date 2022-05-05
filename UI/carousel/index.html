@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/carousel.css">
+    <style>
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            width: 80%;
+        }
+    </style>
+    <title>Slider Component</title>
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="carousel">
+                <div class="carousel-item" style="background-color: aquamarine;"></div>
+                <div class="carousel-item active" style="background-color: salmon;"></div>
+                <div class="carousel-item" style="background-color: bisque;"></div>
+                <div class="carousel-item" style="background-color:blueviolet;"></div>
+                <div class="carousel-item" style="background-color:rgb(226, 43, 186);"></div>
+
+                <span class="carousel-control-prev" role="button">
+                    <img aria-hidden="true" src="images/prev.svg" alt="Prev button"> 
+                </span>
+
+                <span class="carousel-control-next" role="button">
+                    <img aria-hidden="true" src="images/next.svg" alt="Next button"> 
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/carousel.js"></script>
+
+</body>
